@@ -1,6 +1,6 @@
 # 🎓 {VITE_APP_NAME} - Smart College ERP System
 
-A comprehensive Full-Stack Enterprise Resource Planning (ERP) solution designed to streamline college administration, student tracking, and financial management. This project was developed as part of the MCA 2027 curriculum at **Manipal University Jaipur**.
+A comprehensive Full-Stack Enterprise Resource Planning (ERP) solution designed to streamline college administration, student tracking, and financial management. This project was developed as part of the BCA 2026 curriculum at **Mandsaur University **.
 
 ---
 
