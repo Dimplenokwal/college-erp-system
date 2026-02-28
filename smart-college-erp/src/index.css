@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Adding the soft pink background from your design to the whole app */
+body {
+  @apply bg-rose-50;
+}
