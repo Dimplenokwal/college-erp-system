@@ -18,7 +18,7 @@ const db = mysql.createPool({
     host: process.env.DB_HOST || 'localhost',
     user: process.env.DB_USER || 'root',
     password: process.env.DB_PASSWORD || '',
-    database: process.env.DB_NAME || 'college_erp',
+    database: process.env.DB_NAME || 'smart_college_erp', // Updated to match your DB
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0
@@ -37,7 +37,6 @@ db.getConnection((err, connection) => {
 // 📊 DASHBOARD ANALYTICS ROUTE
 // ----------------------------------------------------
 app.get('/api/dashboard/stats', (req, res) => {
-    // This query fetches totals for the 4 dashboard cards
     const sql = `
         SELECT 
             (SELECT COUNT(*) FROM users WHERE role = 'student') as totalStudents,
@@ -81,8 +80,18 @@ app.post('/api/auth/register', async (req, res) => {
 
 app.post('/api/auth/login', (req, res) => {
     const { email, password } = req.body;
+
+    // 🚀 VIVA PRESENTATION BYPASS (Hardcoded Admin)
+    if (email === 'admin@eduflow.com' && password === 'admin123') {
+        const token = jwt.sign({ id: 999, role: 'admin' }, process.env.JWT_SECRET, { expiresIn: '1d' });
+        return res.json({ 
+            token, 
+            user: { id: 999, name: 'Admin', email: 'admin@eduflow.com', role: 'admin' } 
+        });
+    }
+
+    // Standard Database Login (For regular users/students)
     const sql = 'SELECT * FROM users WHERE email = ?';
-    
     db.query(sql, [email], async (err, results) => {
         if (err) return res.status(500).json({ error: err.message });
         if (results.length === 0) return res.status(400).json({ message: 'Invalid credentials!' });

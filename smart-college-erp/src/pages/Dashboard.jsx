@@ -266,7 +266,7 @@ export default function Dashboard() {
         <span className="text-gray-600 font-extrabold ml-1">{import.meta.env.VITE_DEVELOPER}</span>
     </p>
     <p className="text-[10px] text-gray-300 uppercase tracking-[0.2em] mt-1">
-        {import.meta.env.VITE_UNIVERSITY} • MCA 2027
+        {import.meta.env.VITE_UNIVERSITY} 
     </p>
 </footer>
 
