@@ -19,7 +19,7 @@ export default function Fees() {
   // Fetch all students and their fee status
   const fetchFees = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/fees');
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/fees`);
       if (response.ok) {
         const data = await response.json();
         setFeesList(data);
@@ -44,7 +44,7 @@ export default function Fees() {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/fees', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/fees`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
