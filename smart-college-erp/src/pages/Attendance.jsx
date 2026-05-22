@@ -164,10 +164,10 @@ export default function Attendance() {
     <div className={`h-[1px] w-full bg-gradient-to-r from-transparent via-${import.meta.env.VITE_THEME_COLOR}-200 to-transparent mb-4`}></div>
     <p className="text-sm font-semibold text-gray-400">
         <span className={`text-${import.meta.env.VITE_THEME_COLOR}-500 font-bold`}>{import.meta.env.VITE_APP_NAME}</span> — Designed & Developed by 
-        <span className="text-gray-600 font-extrabold ml-1">{import.meta.env.VITE_DEVELOPER}</span>
+        <span className="text-gray-600 font-extrabold ml-1">Dimple Nokwal</span>
     </p>
     <p className="text-[10px] text-gray-300 uppercase tracking-[0.2em] mt-1">
-        {import.meta.env.VITE_UNIVERSITY} 
+        Mandsaur University
     </p>
 </footer>
 
