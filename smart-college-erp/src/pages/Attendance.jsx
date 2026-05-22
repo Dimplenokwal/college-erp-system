@@ -31,7 +31,7 @@ export default function Attendance() {
 
   const handleMarkAttendance = async (studentId, status) => {
     try {
-      const response = await fetch('http://localhost:5000/api/attendance', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/attendance`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
