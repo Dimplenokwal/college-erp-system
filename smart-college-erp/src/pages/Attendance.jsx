@@ -15,7 +15,7 @@ export default function Attendance() {
 
   const fetchAttendance = async (date) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/attendance/${date}`);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/attendance/${date}`);
       if (response.ok) {
         const data = await response.json();
         setStudentsList(data);
